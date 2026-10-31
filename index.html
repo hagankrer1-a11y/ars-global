@@ -89,15 +89,73 @@ details p{margin:0 0 16px;color:var(--muted)}
 form{display:grid;gap:12px}
 input,select,textarea{width:100%;padding:13px 15px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit}
 textarea{min-height:90px;resize:vertical}
-.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:1.7rem;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;background:#d9a441;color:#0b1b3a;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:1.7rem;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.3)}
 footer{background:var(--navy);color:#9eaac8;padding:40px 0 44px;font-size:.86rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
 .rv.on{opacity:1;transform:none}
 @media(max-width:700px){nav a:not(.cta){display:none}.hero{padding:70px 0 64px}.btn.ghost{margin:12px 0 0}.truck,.contact{padding:28px}section{padding:56px 0}}
+.gal{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.ph{margin:0;position:relative;border-radius:20px;overflow:hidden;height:250px;border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
+.ph:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(11,27,58,.2)}
+.ph svg{width:100%;height:100%;display:block;transition:transform .6s}
+.ph:hover svg{transform:scale(1.06)}
+.pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.ph:hover .pimg{transform:scale(1.06)}
+.ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:34px 18px 14px;background:linear-gradient(transparent,rgba(6,12,27,.82));color:#fff;font-weight:700}
+.ph figcaption small{display:block;font-weight:400;color:#cdd6ec;font-size:.82rem}
+@keyframes flow{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-34px) scale(1.12)}}
+@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes mq{to{transform:translateX(-50%)}}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.14) translate(-2%,-2%)}}
+@keyframes shine{to{background-position:200% center}}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(217,164,65,.55)}70%{box-shadow:0 0 0 18px rgba(217,164,65,0)}100%{box-shadow:0 0 0 0 rgba(217,164,65,0)}}
+.hero{background:linear-gradient(120deg,#0b1b3a,#16306a,#1d4a8f,#0e2a5c);background-size:300% 300%;animation:flow 14s ease infinite}
+.orb{position:absolute;border-radius:50%;filter:blur(46px);opacity:.5;z-index:0;animation:float 9s ease-in-out infinite;pointer-events:none}
+.o1{width:280px;height:280px;left:-70px;bottom:-70px;background:#d9a441}
+.o2{width:210px;height:210px;right:12%;top:28%;background:#3b7bd6;animation-delay:-4s}
+.hero .eyebrow{animation:up .8s both}
+.hero h1{animation:up .9s .15s both}
+.hero p{animation:up .9s .3s both}
+.hero .btn{animation:up .9s .45s both}
+.hero .badges{animation:up .9s .6s both}
+.hero .stats{animation:up .9s .75s both}
+h1 em{background:linear-gradient(90deg,#d9a441,#fff1c7,#d9a441);background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
+.btn:not(.ghost){position:relative;overflow:hidden}
+.btn:not(.ghost)::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine2 3.2s infinite}
+@keyframes shine2{0%{left:-60%}60%,100%{left:130%}}
+.tick{background:var(--navy);color:#d9a441;overflow:hidden;white-space:nowrap;padding:15px 0;font-weight:700;letter-spacing:.22em;font-size:.82rem;border-top:1px solid rgba(255,255,255,.08)}
+.tick div{display:inline-block;animation:mq 30s linear infinite}
+.tick span{margin:0 26px}
+#pg{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:linear-gradient(90deg,#d9a441,#f6dc9b);z-index:60}
+.ph svg,.pimg{animation:kb 18s ease-in-out infinite alternate}
+.ph:nth-child(2) svg,.ph:nth-child(2) .pimg{animation-delay:-4s}
+.ph:nth-child(3) svg,.ph:nth-child(3) .pimg{animation-delay:-8s}
+.ph:nth-child(4) svg,.ph:nth-child(4) .pimg{animation-delay:-12s}
+.card:hover{border-color:var(--accent)}
+.card .ico{display:inline-block;transition:transform .35s}
+.card:hover .ico{transform:scale(1.25) rotate(-8deg)}
+.rv:nth-child(2){transition-delay:.1s}.rv:nth-child(3){transition-delay:.2s}.rv:nth-child(4){transition-delay:.3s}
+.wa{animation:pulse 2.4s infinite}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@keyframes blink{50%{opacity:0}}
+.cur{color:#d9a441;animation:blink 1s steps(1) infinite;margin-left:2px}
+#glow{position:fixed;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(217,164,65,.17),transparent 65%);pointer-events:none;z-index:5;transform:translate(-50%,-50%);left:-999px;top:-999px}
+.card{position:relative}
+.card::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(217,164,65,.2),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover::after{opacity:1}
+h2::after{content:"";display:block;width:58px;height:4px;border-radius:4px;background:linear-gradient(90deg,#d9a441,#f6dc9b);margin-top:12px}
+.stats>div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(8px);padding:16px 18px;border-radius:16px}
+.step{transition:transform .25s,border-color .25s,box-shadow .25s}
+.step:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 14px 30px rgba(11,27,58,.14)}
+.why div{transition:transform .25s,border-color .25s}
+.why div:hover{transform:translateX(6px)}
+.contact{box-shadow:0 20px 50px rgba(11,27,58,.12)}
 </style>
 </head>
 <body>
+<div id="pg"></div><div id="glow"></div>
 <header>
 <div class="wrap">
 <div class="logo"><i>AG</i>ARS <span>GLOBAL</span></div>
@@ -106,8 +164,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
 </header>
 
 <div class="hero">
+<i class="orb o1"></i><i class="orb o2"></i>
 <div class="wrap">
-<div class="eyebrow">Vize · Oturum · İstihdam</div>
+<div class="eyebrow">Avrupa’da <span id="tw"></span><span class="cur">|</span></div>
 <h1>Avrupa’ya giden yolu <em>sizin için</em> netleştiriyoruz.</h1>
 <p>ARS GLOBAL; Schengen vizesi, Litvanya ve İspanya oturumu ile Polonya’da iş imkânlarında başvurunuzu baştan sona takip eden danışmanlık ekibidir. Doğru yolu seçer, evrağı hazırlar, süreci sizin yerinize yürütürüz.</p>
 <a class="btn" href="#iletisim">Ücretsiz Ön Görüşme</a><a class="btn ghost" href="#hizmetler">Hizmetleri Gör</a>
@@ -116,10 +175,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
 <div><b data-n="6">0</b><small>Ana hizmet</small></div>
 <div><b data-n="3">0</b><small>Hedef ülke</small></div>
 <div><b data-n="4">0</b><small>Adımda tamamlanan süreç</small></div>
-<div><b>7/24</b><small>WhatsApp’tan ulaşım</small></div>
+<div><b>7/24</b><small>E-posta ile ulaşım</small></div>
 </div>
 </div>
 </div>
+
+<div class="tick"><div><span>POLONYA ✦ LİTVANYA ✦ İSPANYA ✦ SCHENGEN ✦ KOD 95 ✦ EHLİYET DEĞİŞTİRME ✦ TIR ŞOFÖRLERİ ✦ OTURUM ✦ İSTHİDAM ✦ </span><span>POLONYA ✦ LİTVANYA ✦ İSPANYA ✦ SCHENGEN ✦ KOD 95 ✦ EHLİYET DEĞİŞTİRME ✦ TIR ŞOFÖRLERİ ✦ OTURUM ✦ İSTHİDAM ✦ </span></div></div>
 
 <section id="hizmetler">
 <div class="wrap">
@@ -230,37 +291,42 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
 <div class="contact rv">
 <div class="info">
 <h2>Ücretsiz ön görüşme</h2>
-<p>Formu doldurun, mesajınız WhatsApp’tan bize ulaşsın. Aynı gün dönüş yapalım.</p>
-<p style="margin-top:22px">Telefon / WhatsApp</p>
-<p class="big">+90 5XX XXX XX XX</p>
-<p>E-posta</p>
-<p class="big">info@arsglobal.com</p>
+<p>Formu doldurun, e-posta uygulamanız hazır bir mesajla açılsın. Aynı gün dönüş yapalım.</p>
+<p style="margin-top:22px">E-posta</p>
+<p class="big"><a href="mailto:arsglobal.business19@gmail.com" style="color:var(--text)">arsglobal.business19@gmail.com</a></p>
+<p><a href="mailto:arsglobal.business19@gmail.com">Doğrudan e-posta gönder →</a></p>
 <p class="note">Sonuçlar ilgili ülkelerin resmi kurumlarının kararına bağlıdır; onay garantisi verilmez.</p>
 </div>
 <form id="f">
 <input id="ad" placeholder="Ad Soyad" required>
 <select id="hz"><option>3 Aylık Schengen Vizesi</option><option>Litvanya 2 Yıllık Oturum</option><option>İspanya 3 Yıllık Oturum</option><option>Polonya’da İş (Tır Şoförü)</option><option>Polonya’da Ehliyet Değiştirme</option><option>Kod 95 Belgesi</option></select>
-<input id="tel" placeholder="Telefon numaranız">
+<input id="tel" placeholder="Telefon numaranız (isteğe bağlı)">
 <textarea id="msg" placeholder="Kısaca durumunuzu yazın"></textarea>
-<a class="btn" id="send" href="https://wa.me/905000000000" style="text-align:center">WhatsApp ile Gönder</a>
+<a class="btn" id="send" href="mailto:arsglobal.business19@gmail.com" style="text-align:center">E-posta ile Gönder</a>
 </form>
 </div>
 </div>
 </section>
 
 <footer>
-<div class="wrap"><div><b style="color:#fff;letter-spacing:.14em">ARS GLOBAL</b><br>Schengen · Oturum · İstihdam danışmanlığı</div><div>© 2026 ARS GLOBAL. Tüm hakları saklıdır.</div></div>
+<div class="wrap"><div><b style="color:#fff;letter-spacing:.14em">ARS GLOBAL</b><br>Schengen · Oturum · İstihdam danışmanlığı</div><div>© 2026 ARS GLOBAL · arsglobal.business19@gmail.com</div></div>
 </footer>
-<a class="wa" href="https://wa.me/905000000000" aria-label="WhatsApp">💬</a>
+<a class="wa" href="mailto:arsglobal.business19@gmail.com" aria-label="E-posta">✉️</a>
 
 <script>
 (function(){
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
 document.querySelectorAll("[data-n]").forEach(function(el){var t=+el.dataset.n,i=0;var h=setInterval(function(){i++;el.textContent=i;if(i>=t)clearInterval(h)},260)});
+window.addEventListener("scroll",function(){var h=document.documentElement;var p=h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight);document.getElementById("pg").style.width=(p*100)+"%";var o=document.querySelector(".o2");if(o)o.style.translate="0 "+(h.scrollTop*.18)+"px"},{passive:true});
 var s=document.getElementById("send");
-function upd(){var t="Merhaba, ARS GLOBAL. Ad: "+document.getElementById("ad").value+" | Hizmet: "+document.getElementById("hz").value+" | Tel: "+document.getElementById("tel").value+" | Not: "+document.getElementById("msg").value;s.href="https://wa.me/905000000000?text="+encodeURIComponent(t)}
-document.getElementById("f").addEventListener("input",upd);upd();
+function upd(){var t="Merhaba ARS GLOBAL,\n\nAd Soyad: "+document.getElementById("ad").value+"\nHizmet: "+document.getElementById("hz").value+"\nTelefon: "+document.getElementById("tel").value+"\n\n"+document.getElementById("msg").value;s.href="mailto:arsglobal.business19@gmail.com?subject="+encodeURIComponent("Ön görüşme: "+document.getElementById("hz").value)+"&body="+encodeURIComponent(t)}
+document.getElementById("f").addEventListener("input",upd);document.getElementById("f").addEventListener("change",upd);upd();
+document.querySelectorAll(".card").forEach(function(c){c.addEventListener("mousemove",function(e){var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty("--mx",x+"px");c.style.setProperty("--my",y+"px");c.style.transform="perspective(800px) rotateX("+((y/r.height-.5)*-7)+"deg) rotateY("+((x/r.width-.5)*7)+"deg) translateY(-5px)"});c.addEventListener("mouseleave",function(){c.style.transform=""})});
+var g=document.getElementById("glow");window.addEventListener("mousemove",function(e){g.style.left=e.clientX+"px";g.style.top=e.clientY+"px"},{passive:true});
+var W=["vize","oturum","iş ve istihdam","Kod 95","ehliyet değiştirme"],wi=0,ci=0,del=false,tw=document.getElementById("tw");
+function type(){var w=W[wi];if(!del){ci++;tw.textContent=w.slice(0,ci);if(ci===w.length){del=true;return setTimeout(type,1400)}}else{ci--;tw.textContent=w.slice(0,ci);if(ci===0){del=false;wi=(wi+1)%W.length}}setTimeout(type,del?45:90)}
+type();
 })();
 </script>
 </body>
