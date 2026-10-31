@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ARS GLOBAL – Schengen, Oturum ve Avrupa’da İş Danışmanlığı</title>
+<style>
+:root{--bg:#f7f5ef;--surface:#fff;--text:#14213d;--muted:#5b6478;--accent:#b8862b;--accent-text:#fff;--navy:#0b1b3a;--line:#e4dfd0;--soft:#efe9d8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1226;--surface:#121d38;--text:#eef1f8;--muted:#9aa5bf;--accent:#d9a441;--accent-text:#0b1b3a;--navy:#060c1b;--line:#223056;--soft:#16254a}}
+:root[data-theme="dark"]{--bg:#0a1226;--surface:#121d38;--text:#eef1f8;--muted:#9aa5bf;--accent:#d9a441;--accent-text:#0b1b3a;--navy:#060c1b;--line:#223056;--soft:#16254a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.65}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--navy);z-index:30}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--navy);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;letter-spacing:.16em;font-size:1.05rem;display:flex;align-items:center;gap:10px}
+.logo i{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#d9a441,#b8862b);color:#0b1b3a;font-style:normal;font-size:.8rem;letter-spacing:0}
+.logo span{color:#d9a441}
+nav{display:flex;gap:22px;align-items:center;font-size:.92rem}
+nav a{color:#d5dbea;text-decoration:none}
+nav a:hover{color:#fff}
+nav .cta{background:#d9a441;color:#0b1b3a;padding:9px 18px;border-radius:999px;font-weight:700}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-text);padding:14px 28px;border-radius:999px;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-size:1rem;font-family:inherit;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(184,134,43,.35)}
+.btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4);margin-left:10px}
+.hero{background:linear-gradient(135deg,#0b1b3a 0%,#16306a 60%,#1d4a8f 100%);color:#fff;padding:104px 0 90px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:26px 26px}
+.hero::after{content:"";position:absolute;right:-140px;top:-140px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(217,164,65,.38),transparent 70%)}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{color:#d9a441;font-weight:700;letter-spacing:.18em;font-size:.78rem;text-transform:uppercase}
+h1{font-size:clamp(2.1rem,5.8vw,3.7rem);line-height:1.1;margin:14px 0 18px;max-width:800px}
+h1 em{font-style:normal;color:#d9a441}
+.hero p{max-width:640px;color:#cdd6ec;font-size:1.12rem;margin:0 0 30px}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.badges span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);padding:7px 14px;border-radius:999px;font-size:.84rem;color:#e6ebf7}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:20px;margin-top:52px;max-width:760px}
+.stats b{display:block;font-size:2rem;color:#d9a441;line-height:1.1}
+.stats small{color:#b7c2de}
+section{padding:78px 0}
+.alt{background:var(--soft)}
+h2{font-size:clamp(1.6rem,3.6vw,2.3rem);margin:0 0 10px;line-height:1.2}
+.sub{color:var(--muted);max-width:640px;margin:0 0 40px}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(11,27,58,.14)}
+.ico{font-size:2.1rem;margin-bottom:12px}
+.card h3{margin:0 0 8px;font-size:1.2rem}
+.card p{margin:0 0 14px;color:var(--muted);font-size:.95rem}
+.card ul{margin:0 0 16px;padding:0;list-style:none;font-size:.9rem;display:grid;gap:6px}
+.card li::before{content:"✓ ";color:var(--accent);font-weight:800}
+.card .tag{margin-top:auto;display:inline-block;font-size:.76rem;font-weight:800;color:var(--accent);letter-spacing:.08em}
+.card a.more{color:var(--accent);font-weight:700;text-decoration:none;font-size:.9rem;margin-top:10px}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.93rem}
+th,td{padding:15px 18px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:var(--navy);color:#fff;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:700}
+.truck{background:linear-gradient(135deg,#0b1b3a,#16306a);color:#fff;border-radius:28px;padding:52px;display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:center}
+.truck h2{color:#fff}
+.truck p{color:#c3cde6}
+.truck ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.truck li{background:rgba(255,255,255,.08);padding:15px 18px;border-radius:14px;border:1px solid rgba(255,255,255,.1)}
+.truck li::before{content:"✓ ";color:#d9a441;font-weight:800}
+.docs{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 26px}
+.docs span{background:rgba(217,164,65,.16);color:#f0d9a0;padding:6px 13px;border-radius:999px;font-size:.82rem}
+.steps{counter-reset:s;display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+.step::before{counter-increment:s;content:counter(s);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--accent);color:var(--accent-text);font-weight:800;margin-bottom:14px}
+.step b{display:block;margin-bottom:4px}
+.step span{color:var(--muted);font-size:.92rem}
+.why{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.why div{padding:6px 0 6px 18px;border-left:3px solid var(--accent)}
+.why b{display:block;font-size:1.05rem;margin-bottom:4px}
+.why span{color:var(--muted);font-size:.93rem}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:4px 20px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700;padding:15px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";color:var(--accent);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 16px;color:var(--muted)}
+.contact{display:grid;gap:34px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:44px}
+.contact h2{margin-bottom:12px}
+.info p{margin:8px 0;color:var(--muted)}
+.info .big{font-size:1.25rem;font-weight:800;color:var(--text)}
+.info a{color:var(--accent);font-weight:700;text-decoration:none}
+.note{font-size:.8rem;opacity:.9;margin-top:18px}
+form{display:grid;gap:12px}
+input,select,textarea{width:100%;padding:13px 15px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit}
+textarea{min-height:90px;resize:vertical}
+.wa{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;font-size:1.7rem;text-decoration:none;box-shadow:0 8px 22px rgba(0,0,0,.3)}
+footer{background:var(--navy);color:#9eaac8;padding:40px 0 44px;font-size:.86rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.rv.on{opacity:1;transform:none}
+@media(max-width:700px){nav a:not(.cta){display:none}.hero{padding:70px 0 64px}.btn.ghost{margin:12px 0 0}.truck,.contact{padding:28px}section{padding:56px 0}}
+</style>
+</head>
+<body>
+<header>
+<div class="wrap">
+<div class="logo"><i>AG</i>ARS <span>GLOBAL</span></div>
+<nav><a href="#hizmetler">Hizmetler</a><a href="#karsilastirma">Karşılaştırma</a><a href="#tir">Şoför Hizmetleri</a><a href="#sss">SSS</a><a class="cta" href="#iletisim">Başvuru</a></nav>
+</div>
+</header>
+
+<div class="hero">
+<div class="wrap">
+<div class="eyebrow">Vize · Oturum · İstihdam</div>
+<h1>Avrupa’ya giden yolu <em>sizin için</em> netleştiriyoruz.</h1>
+<p>ARS GLOBAL; Schengen vizesi, Litvanya ve İspanya oturumu ile Polonya’da iş imkânlarında başvurunuzu baştan sona takip eden danışmanlık ekibidir. Doğru yolu seçer, evrağı hazırlar, süreci sizin yerinize yürütürüz.</p>
+<a class="btn" href="#iletisim">Ücretsiz Ön Görüşme</a><a class="btn ghost" href="#hizmetler">Hizmetleri Gör</a>
+<div class="badges"><span>✔ Kişiye özel evrak listesi</span><span>✔ Şeffaf süreç</span><span>✔ Başvuru sonrası takip</span><span>✔ Türkçe destek</span></div>
+<div class="stats">
+<div><b data-n="6">0</b><small>Ana hizmet</small></div>
+<div><b data-n="3">0</b><small>Hedef ülke</small></div>
+<div><b data-n="4">0</b><small>Adımda tamamlanan süreç</small></div>
+<div><b>7/24</b><small>WhatsApp’tan ulaşım</small></div>
+</div>
+</div>
+</div>
+
+<section id="hizmetler">
+<div class="wrap">
+<div class="rv">
+<h2>Hizmetlerimiz</h2>
+<p class="sub">Amacınıza uygun programı birlikte belirler, başvuru sürecini adım adım yönetiriz.</p>
+</div>
+<div class="grid">
+<div class="card rv"><div class="ico">🛂</div><h3>3 Aylık Schengen Vizesi</h3><p>Seyahat, ticaret veya ziyaret için Schengen bölgesine giriş.</p><ul><li>Doğru vize türünün seçimi</li><li>Evrak ve seyahat planı hazırlığı</li><li>Randevu ve başvuru desteği</li></ul><span class="tag">KISA SÜRELİ · 3 AY</span></div>
+<div class="card rv"><div class="ico">🏛️</div><h3>Litvanya Oturumu</h3><p>Avrupa Birliği içinde 2 yıllık oturum izni için tam destek.</p><ul><li>Uygunluk değerlendirmesi</li><li>Belge planı ve tercüme yönlendirmesi</li><li>Başvuru ve sonuç takibi</li></ul><span class="tag">2 YILLIK OTURUM</span></div>
+<div class="card rv"><div class="ico">☀️</div><h3>İspanya Oturumu</h3><p>3 yıllık İspanya oturum süreci için net bir yol haritası.</p><ul><li>Profilinize uygun başvuru yolu</li><li>Evrak kontrolü ve eksik tamamlama</li><li>Randevu ve dosya takibi</li></ul><span class="tag">3 YILLIK OTURUM</span></div>
+<div class="card rv"><div class="ico">🚛</div><h3>Polonya’da İş ve İstihdam</h3><p>Tır şoförleri için Polonya’da çalışma ve işverenle buluşma desteği.</p><ul><li>İşveren eşleştirme</li><li>Çalışma izni evrak hazırlığı</li><li>Varış sonrası yönlendirme</li></ul><a class="more" href="#tir">Detaylı bilgi →</a></div>
+<div class="card rv"><div class="ico">🪪</div><h3>Polonya’da Ehliyet Değiştirme</h3><p>Ehliyetinizi Polonya’da geçerli hale getirme sürecinde başvuru desteği.</p><ul><li>Uygunluk ve şart değerlendirmesi</li><li>Evrak ve tercüme yönlendirmesi</li><li>Başvuru ve teslim takibi</li></ul><a class="more" href="#sofor-belge">Detaylı bilgi →</a></div>
+<div class="card rv"><div class="ico">📜</div><h3>Kod 95 (Mesleki Yeterlilik)</h3><p>Profesyonel şoförler için Avrupa’da zorunlu Kod 95 belgesi ve eğitim yönlendirmesi.</p><ul><li>Belge ve eğitim durumu kontrolü</li><li>Eğitim merkezi yönlendirmesi</li><li>Ehliyete işleme sürecinin takibi</li></ul><a class="more" href="#sofor-belge">Detaylı bilgi →</a></div>
+</div>
+</div>
+</section>
+
+<section id="karsilastirma" class="alt">
+<div class="wrap">
+<div class="rv"><h2>Hangi program size uygun?</h2><p class="sub">Programları bir bakışta karşılaştırın. Kesin uygunluk, ön görüşmede profilinize göre belirlenir.</p></div>
+<div class="table-wrap rv">
+<table>
+<tr><th>Program</th><th>Süre</th><th>Kimler için</th><th>Öne çıkan</th></tr>
+<tr><td>Schengen Vizesi</td><td>3 ay</td><td>Seyahat, ticaret, ziyaret</td><td>Hızlı ve kısa süreli giriş</td></tr>
+<tr><td>Litvanya Oturumu</td><td>2 yıl</td><td>Avrupa’da yaşamak isteyenler</td><td>AB içinde uzun süreli kalış</td></tr>
+<tr><td>İspanya Oturumu</td><td>3 yıl</td><td>Uzun vadeli planlayanlar</td><td>Daha uzun oturum süresi</td></tr>
+<tr><td>Polonya İstihdam</td><td>İş sözleşmesine göre</td><td>Tır şoförleri</td><td>Sektöre özel iş eşleştirme</td></tr>
+<tr><td>Ehliyet Değiştirme</td><td>Kişiye göre</td><td>Polonya’da sürücü belgesi gerekenler</td><td>Evrak ve başvuru takibi</td></tr>
+<tr><td>Kod 95</td><td>5 yıllık yenileme</td><td>Profesyonel ticari şoförler</td><td>Avrupa’da çalışma şartı</td></tr>
+</table>
+</div>
+</div>
+</section>
+
+<section id="tir">
+<div class="wrap">
+<div class="truck rv">
+<div>
+<div class="eyebrow">Tır şoförlerine özel</div>
+<h2>Polonya’da iş ve istihdam</h2>
+<p>Uluslararası taşımacılıkta Polonya, şoförler için en önemli iş merkezlerinden biri. ARS GLOBAL olarak ehliyetinizden çalışma iznine kadar tüm adımlarda yanınızdayız.</p>
+<div class="docs"><span>Ehliyet (C/CE)</span><span>SRC belgesi</span><span>Psikoteknik</span><span>Pasaport</span><span>CV</span></div>
+<a class="btn" href="#iletisim">Tır Şoförü Başvurusu</a>
+</div>
+<ul>
+<li>Polonyalı işverenlerle görüşme ve eşleştirme</li>
+<li>Çalışma izni ve oturum evrakı hazırlığı</li>
+<li>Belge, ehliyet ve yeterlilik kontrolü</li>
+<li>Sözleşme maddelerini anlama desteği</li>
+<li>Varış sonrası temel yönlendirme</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="sofor-belge" class="alt">
+<div class="wrap">
+<div class="rv"><h2>Profesyonel şoför belgeleri</h2><p class="sub">Polonya ve Avrupa’da çalışmak için ehliyet ve mesleki yeterlilik evraklarınızı eksiksiz hale getiriyoruz.</p></div>
+<div class="grid">
+<div class="card rv"><div class="ico">🪪</div><h3>Ehliyet Değiştirme</h3><p>Polonya’da sürücü belgesi geçerliliği için gereken adımları sizin adınıza planlar ve takip ederiz.</p><ul><li>Mevcut ehliyetin incelenmesi</li><li>Gerekli belge listesinin hazırlanması</li><li>Resmî kurum randevu ve başvuru desteği</li><li>Sonuç ve teslim takibi</li></ul><span class="tag">POLONYA</span></div>
+<div class="card rv"><div class="ico">📜</div><h3>Kod 95</h3><p>Ticari araç şoförleri için mesleki yeterlilik işareti. Periyodik eğitimle yenilenir.</p><ul><li>Mevcut yeterlilik durumunun kontrolü</li><li>Eğitim kursuna yönlendirme</li><li>35 saatlik periyodik eğitim planlaması</li><li>Belgenin ehliyete işlenmesi</li></ul><span class="tag">AVRUPA GEÇERLİ</span></div>
+<div class="card rv"><div class="ico">🚚</div><h3>Ticari Sürücü Evrakları</h3><p>Tır şoförlerinin işe başlamadan önce ihtiyaç duyduğu diğer belgeler.</p><ul><li>Sürücü kartı (takograf kartı) yönlendirmesi</li><li>Sağlık ve psikoteknik rapor planı</li><li>Belge ve tercüme kontrolü</li><li>İşe giriş evrak listesi</li></ul><span class="tag">İŞE HAZIRLIK</span></div>
+<div class="card rv"><div class="ico">🧭</div><h3>Şoför Danışmanlığı</h3><p>Hangi belgenin eksik olduğunu ve sırasının ne olması gerektiğini birlikte netleştiririz.</p><ul><li>Ücretsiz ön değerlendirme</li><li>Adım adım yol haritası</li><li>İşveren ile belge uyumu kontrolü</li></ul><a class="more" href="#iletisim">Danışmanlık al →</a></div>
+</div>
+</div>
+</section>
+
+<section id="surec">
+<div class="wrap">
+<div class="rv"><h2>Süreç nasıl işler?</h2><p class="sub">Dört net adım, sürpriz yok.</p></div>
+<div class="steps">
+<div class="step rv"><b>Ön görüşme</b><span>Durumunuzu dinler, hedefinize uygun seçeneği belirleriz.</span></div>
+<div class="step rv"><b>Evrak planı</b><span>Size özel evrak listesini ve zaman çizelgesini hazırlarız.</span></div>
+<div class="step rv"><b>Başvuru</b><span>Dosyanızı eksiksiz şekilde ilgili kuruma ileteceğiz.</span></div>
+<div class="step rv"><b>Takip ve sonuç</b><span>Sonuç çıkana kadar süreci izler, sizi bilgilendiririz.</span></div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+<div class="rv"><h2>Neden ARS GLOBAL?</h2><p class="sub">Başvuruyu bir form doldurmaktan fazlası olarak görüyoruz.</p></div>
+<div class="why">
+<div class="rv"><b>Kişiye özel plan</b><span>Her başvuru sahibinin durumu farklı. Hazır kalıp değil, size özel yol haritası sunarız.</span></div>
+<div class="rv"><b>Açık iletişim</b><span>Süreçte neyin, ne zaman olacağını baştan söyler, her aşamada bilgi veririz.</span></div>
+<div class="rv"><b>Evrakta titizlik</b><span>Eksik veya hatalı belgeler başvuruyu geciktirir. Dosyanızı göndermeden önce kontrol ederiz.</span></div>
+<div class="rv"><b>Sektörü tanıyoruz</b><span>Tır şoförlerinin ihtiyaçlarını ve Polonya iş piyasasını yakından takip ederiz.</span></div>
+</div>
+</div>
+</section>
+
+<section id="sss" class="alt">
+<div class="wrap" style="max-width:820px">
+<div class="rv"><h2>Sık sorulan sorular</h2><p class="sub">Aklınızdaki sorular için kısa yanıtlar.</p></div>
+<details class="rv"><summary>Başvurum onaylanır mı?</summary><p>Karar tamamen ilgili ülkenin resmi kurumlarına aittir. Biz başvurunuzu eksiksiz ve doğru hazırlamanıza yardımcı oluruz, ancak onay garantisi vermeyiz.</p></details>
+<details class="rv"><summary>Süreç ne kadar sürer?</summary><p>Süre programa, ülkeye ve dönemsel yoğunluğa göre değişir. Ön görüşmede profilinize göre tahmini bir takvim paylaşırız.</p></details>
+<details class="rv"><summary>Hangi belgeler gerekir?</summary><p>Program ve kişisel duruma göre değişir. Ön görüşmeden sonra size özel kontrol listesi hazırlarız.</p></details>
+<details class="rv"><summary>Tır şoförü olarak Polonya’da çalışmak için ne gerekir?</summary><p>Genel olarak geçerli ehliyet, mesleki yeterlilik belgeleri, pasaport ve çalışma izni evrakları gerekir. Detaylar işverene göre değişebilir.</p></details>
+<details class="rv"><summary>Kod 95 nedir, herkes için gerekli mi?</summary><p>Kod 95, ticari araç kullanan profesyonel şoförlerin mesleki yeterliliğini gösteren Avrupa işaretidir ve ehliyete işlenir. Genellikle düzenli periyodik eğitimle yenilenir. Sizin için gerekip gerekmediğini ön görüşmede netleştiririz.</p></details>
+<details class="rv"><summary>Polonya’da ehliyet değiştirme şartları nelerdir?</summary><p>Şartlar ehliyetin türüne, düzenlendiği ülkeye ve oturum durumunuza göre değişir. Dosyanızı inceleyip size özel evrak listesini çıkarırız.</p></details>
+<details class="rv"><summary>Ücretlendirme nasıl yapılıyor?</summary><p>Ücret programa göre değişir. Ön görüşmede net fiyat ve hizmet kapsamı yazılı olarak paylaşılır.</p></details>
+</div>
+</section>
+
+<section id="iletisim">
+<div class="wrap">
+<div class="contact rv">
+<div class="info">
+<h2>Ücretsiz ön görüşme</h2>
+<p>Formu doldurun, mesajınız WhatsApp’tan bize ulaşsın. Aynı gün dönüş yapalım.</p>
+<p style="margin-top:22px">Telefon / WhatsApp</p>
+<p class="big">+90 5XX XXX XX XX</p>
+<p>E-posta</p>
+<p class="big">info@arsglobal.com</p>
+<p class="note">Sonuçlar ilgili ülkelerin resmi kurumlarının kararına bağlıdır; onay garantisi verilmez.</p>
+</div>
+<form id="f">
+<input id="ad" placeholder="Ad Soyad" required>
+<select id="hz"><option>3 Aylık Schengen Vizesi</option><option>Litvanya 2 Yıllık Oturum</option><option>İspanya 3 Yıllık Oturum</option><option>Polonya’da İş (Tır Şoförü)</option><option>Polonya’da Ehliyet Değiştirme</option><option>Kod 95 Belgesi</option></select>
+<input id="tel" placeholder="Telefon numaranız">
+<textarea id="msg" placeholder="Kısaca durumunuzu yazın"></textarea>
+<a class="btn" id="send" href="https://wa.me/905000000000" style="text-align:center">WhatsApp ile Gönder</a>
+</form>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="wrap"><div><b style="color:#fff;letter-spacing:.14em">ARS GLOBAL</b><br>Schengen · Oturum · İstihdam danışmanlığı</div><div>© 2026 ARS GLOBAL. Tüm hakları saklıdır.</div></div>
+</footer>
+<a class="wa" href="https://wa.me/905000000000" aria-label="WhatsApp">💬</a>
+
+<script>
+(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".rv").forEach(function(el){io.observe(el)});
+document.querySelectorAll("[data-n]").forEach(function(el){var t=+el.dataset.n,i=0;var h=setInterval(function(){i++;el.textContent=i;if(i>=t)clearInterval(h)},260)});
+var s=document.getElementById("send");
+function upd(){var t="Merhaba, ARS GLOBAL. Ad: "+document.getElementById("ad").value+" | Hizmet: "+document.getElementById("hz").value+" | Tel: "+document.getElementById("tel").value+" | Not: "+document.getElementById("msg").value;s.href="https://wa.me/905000000000?text="+encodeURIComponent(t)}
+document.getElementById("f").addEventListener("input",upd);upd();
+})();
+</script>
+</body>
+</html>
