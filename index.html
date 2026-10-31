@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ARS GLOBAL – Schengen, Oturum ve Avrupa’da İş Danışmanlığı</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;800&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#f7f5ef;--surface:#fff;--text:#14213d;--muted:#5b6478;--accent:#b8862b;--accent-text:#fff;--navy:#0b1b3a;--line:#e4dfd0;--soft:#efe9d8;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1226;--surface:#121d38;--text:#eef1f8;--muted:#9aa5bf;--accent:#d9a441;--accent-text:#0b1b3a;--navy:#060c1b;--line:#223056;--soft:#16254a}}
@@ -152,6 +153,32 @@ h2::after{content:"";display:block;width:58px;height:4px;border-radius:4px;backg
 .why div{transition:transform .25s,border-color .25s}
 .why div:hover{transform:translateX(6px)}
 .contact{box-shadow:0 20px 50px rgba(11,27,58,.12)}
+h1,h2,h3,.logo{font-family:"Playfair Display",Georgia,"Times New Roman",serif}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+::selection{background:#d9a441;color:#0b1b3a}
+header{background:rgba(5,10,24,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(217,164,65,.25)}
+.hero{background:radial-gradient(1100px 560px at 82% -8%,rgba(217,164,65,.24),transparent 60%),linear-gradient(160deg,#050a18,#0b1b3a 55%,#101f45);background-size:auto;animation:none}
+#gold{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.btn:not(.ghost){background:linear-gradient(135deg,#f6dc9b,#d9a441 45%,#b8862b);color:#1b1305;box-shadow:0 10px 26px rgba(184,134,43,.38)}
+.card,.step,details,.contact,.table-wrap{border-color:rgba(184,134,43,.3)}
+.card{overflow:hidden}
+.card::before{content:"";position:absolute;left:24px;right:24px;top:0;height:2px;background:linear-gradient(90deg,transparent,#d9a441,transparent)}
+.card h3{font-size:1.28rem}
+h2{letter-spacing:-.01em}
+.stats b{font-family:"Playfair Display",Georgia,serif}
+#yorumlar{background:linear-gradient(160deg,#050a18,#0b1b3a);color:#fff;position:relative;overflow:hidden}
+#yorumlar::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(217,164,65,.22),transparent 70%)}
+#yorumlar .wrap{position:relative}
+#yorumlar .sub{color:#aab6d3}
+.rev{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.rcard{background:rgba(255,255,255,.06);border:1px solid rgba(217,164,65,.32);border-radius:22px;padding:30px;backdrop-filter:blur(8px);transition:transform .25s,border-color .25s}
+.rcard:hover{transform:translateY(-6px);border-color:#d9a441}
+.rcard .q{font-family:"Playfair Display",Georgia,serif;font-size:3.4rem;line-height:.7;color:#d9a441}
+.rcard p{color:#dbe2f3;margin:6px 0 18px}
+.stars{color:#d9a441;letter-spacing:4px;font-size:1.05rem}
+.rcard b{display:block}
+.rcard small{color:#9eaac8}
+.rcard.empty{grid-column:1/-1;text-align:center;padding:44px 24px}
 </style>
 </head>
 <body>
@@ -164,7 +191,7 @@ h2::after{content:"";display:block;width:58px;height:4px;border-radius:4px;backg
 </header>
 
 <div class="hero">
-<i class="orb o1"></i><i class="orb o2"></i>
+<canvas id="gold"></canvas><i class="orb o1"></i><i class="orb o2"></i>
 <div class="wrap">
 <div class="eyebrow">Avrupa’da <span id="tw"></span><span class="cur">|</span></div>
 <h1>Avrupa’ya giden yolu <em>sizin için</em> netleştiriyoruz.</h1>
@@ -326,6 +353,12 @@ document.querySelectorAll(".card").forEach(function(c){c.addEventListener("mouse
 var g=document.getElementById("glow");window.addEventListener("mousemove",function(e){g.style.left=e.clientX+"px";g.style.top=e.clientY+"px"},{passive:true});
 var W=["vize","oturum","iş ve istihdam","Kod 95","ehliyet değiştirme"],wi=0,ci=0,del=false,tw=document.getElementById("tw");
 function type(){var w=W[wi];if(!del){ci++;tw.textContent=w.slice(0,ci);if(ci===w.length){del=true;return setTimeout(type,1400)}}else{ci--;tw.textContent=w.slice(0,ci);if(ci===0){del=false;wi=(wi+1)%W.length}}setTimeout(type,del?45:90)}
+var cv=document.getElementById("gold"),cx=cv.getContext("2d"),P=[];
+function rs(){cv.width=cv.offsetWidth;cv.height=cv.offsetHeight}
+rs();window.addEventListener("resize",rs);
+for(var i=0;i<55;i++)P.push({x:Math.random(),y:Math.random(),r:Math.random()*1.8+.4,v:Math.random()*.25+.08,a:Math.random()*.6+.2});
+function dr(){cx.clearRect(0,0,cv.width,cv.height);P.forEach(function(p){p.y-=p.v/300;if(p.y<0){p.y=1;p.x=Math.random()}cx.beginPath();cx.arc(p.x*cv.width,p.y*cv.height,p.r,0,6.283);cx.fillStyle="rgba(217,164,65,"+p.a+")";cx.fill()});requestAnimationFrame(dr)}
+dr();
 type();
 })();
 </script>
